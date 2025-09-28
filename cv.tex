@@ -9,7 +9,7 @@
 %	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 %	copies of the Software, and to permit persons to whom the Software is
 %	furnished to do so, subject to the following conditions:
-%	
+%
 %	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 %	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 %	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -17,7 +17,7 @@
 %	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 %	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 %	THE SOFTWARE.
-%	
+%
 %
 %-----------------------------------------------------------------------------------------------------------------------------------------------%
 
@@ -26,7 +26,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -48,7 +48,7 @@
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 \usepackage{url}
-\usepackage{parskip} 	
+\usepackage{parskip}
 
 %other packages for formatting
 \RequirePackage{color}
@@ -63,7 +63,7 @@
 \usepackage{enumitem}
 
 % centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
 %to prevent spillover of tabular into next pages
 \usepackage{supertabular}
@@ -72,13 +72,13 @@
 \setlength{\fullcollw}{0.47\textwidth}
 
 %custom \section
-\usepackage{titlesec}				
+\usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
 
-%CV Sections inspired by: 
+%CV Sections inspired by:
 %http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titleformat{\section}{\color{teal}\Large\scshape\raggedright}{}{0em}{}[\color{teal}\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
 %for publications
@@ -88,6 +88,12 @@
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+% Define color scheme - Modern Teal & Green
+\definecolor{darkteal}{RGB}{15,118,110}     % Main headers (Name)
+\definecolor{teal}{RGB}{20,184,166}        % Section headers
+\definecolor{lightteal}{RGB}{94,234,212}   % Accent color
+\definecolor{adobeblue}{RGB}{0,112,255}     % Company names
 \addbibresource{citations.bib}
 \setlength\bibitemsep{1em}
 
@@ -118,7 +124,7 @@
     }
     {
     \end{itemize}
-    \end{minipage}    
+    \end{minipage}
     }
 
 
@@ -129,7 +135,7 @@
 \begin{document}
 
 % non-numbered pages
-\pagestyle{empty} 
+\pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
 %	TITLE
@@ -142,76 +148,138 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your Name} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+{\color{darkteal}\Huge{RUCHIR CHHEDA}} \\[7.5pt]
+\vspace{5 pt}
+\href{https://linkedin.com/in/ruchir-chheda-a71358186}{\raisebox{-0.05\height}\faLinkedin\ ruchir-chheda} \ $|$ \
+\href{mailto:ruchir.2000@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ ruchir.2000@gmail.com} \ $|$ \
+\href{tel:+918879797905}{\raisebox{-0.05\height}\faMobile \ +91 8879797905} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 % EXPERIENCE SECTIONS
 %----------------------------------------------------------------------------------------
 
-%Interests/ Keywords/ Summary
-\section{Summary}
-This CV can also be automatically complied and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
+% Education
+\section{Education}
 
-%Experience
+\begin{joblong}{Indian Institute of Technology, Bombay}{2018 -- 2023}
+\item \textbf{B.Tech} in Electrical Engineering, \textbf{M.Tech} in Communication and Signal Processing \hfill (CPI: \textbf{9.09/10})
+\item \textbf{Minors}: Computer Science, AI \& Data Science
+\end{joblong}
+
+
 \section{Work Experience}
 
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
-
-
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
+\begin{joblong}{{\color{adobeblue}Adobe Systems} $|$ Machine Learning Engineer 2}{July 2023 - Present}
+\item Built a \textbf{image deduplication system} using structure analysis, color profiling, OCR, and language detection
+\item Engineered CLIP and LLM based solutions for image analysis including \textbf{shot, lighting and style detection}
+\item Collaboratively designed and developed pipelines for \textbf{video feature extraction} and \textbf{video similarity detection}
+\item Analysed \textbf{image} and \textbf{audio} capabilities using pre-annotated and vendor annotated datasets and worked on improvements
+\item Optimized ML model deployments and infrastructure for improved performance and reduced operational overhead
 \end{joblong}
-  
+
+\begin{joblong}{{\color{adobeblue}Adobe Systems} $|$ Machine Learning Intern}{Summer 2022}
+\item Unified multisource emotion datasets (\textbf{WEBEmo, Unsplash, Adobe Stock}) to enable CLIP-based sentiment analysis.
+\item Enhanced model performance through \textbf{prompt engineering}, \textbf{fine-tuning CLIP weights}, and adding \textbf{NN layers}
+\item Implemented dataset \textbf{outlier detection using K-means clustering} on CLIP embeddings and addressed dataset bias
+\end{joblong}
+
+\begin{joblong}{{\color{adobeblue}Adobe Systems} $|$ Machine Learning Intern}{Summer 2021}
+\item Developed hierarchical time series forecasting models for Search Engine Marketing campaigns to predict \textbf{clicks, cost, and CPC} across \textbf{portfolio, campaign, and advertisement} levels
+\item Tested multiple forecasting models like \textbf{SARIMA, XGBoost, Prophet, and Uber Orbit} for ad performance prediction
+\item Implemented day-of-week bias correction using exponential decay and weighted averaging techniques
+\end{joblong}
+
+\begin{joblong}{{\color{adobeblue}SNL Innovations Pvt. Ltd.} $|$ Software Intern}{Summer 2020}
+\item Innofarms, SNL Innovations Pvt. Ltd. is a young startup working in the field of decentralized food processing to reduce wastage, increase farmers income and promote micro-enterprises
+\item Designed a \textbf{tri-party blockchain system} enabling transparent interaction between farmers, middlemen, and processors
+\item Built an \textbf{Ethereum-based B2B trading platform} with \textbf{smart contracts} and \textbf{IPFS}-backed document storage
+\item Developed backend services with \textbf{Flask} and a web interface using \textbf{web3.js}, integrating \textbf{Metamask wallet} support
+\end{joblong}
+
+\begin{joblong}{ {\color{adobeblue}DOCKABL} $|$ Software Intern}{Summer 2020}
+\item Clink is a platform that helps organizations to share active and valuable feedback with their employees
+\item Integrating \textbf{Clink} with \textbf{team-interaction platforms} like Slack in order to use the \textbf{Clink functionalities} on those platforms and \textbf{sending valuable actions} back to Clink for record
+\end{joblong}
+
 %Projects
 \section{Projects}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
-\end{tabularx}
+\begin{joblong}{{\color{adobeblue}Matsya, Autonomous Underwater Vehicle (AUV)} $|$ Tech Team}{2018 - 2023}
+\item \textbf{RoboSub, AUVSI \& US Office of Naval Research} - Guide: Prof. Leena Vachhani, Prof. Hemendra Arya \\
+AUV-IITB student team working on design and development of AUV for International AUVSI Robosub competition
+\item \textbf{Achievements}: Joint Winners at SAVe 2019 (IIT Madras), Semi-finalists at RoboSub 2019, Young Researcher Prize IEEE OES 2021 (Japan), Finalist RoboSub 2022 (Maryland)
+\item \textbf{Research Head (2021-2023)}: Working on diverse multi-bot algorithms and inter vehicle communication simulations
+\item \textbf{Software Sub-Div Head (2020-2021)}: Led 8-member team, working on drag modelling and 3D image reconstruction
+\item \textbf{Software Developer (2019-2020)}: Developed state machine based AI algorithm and BFS Path Planning algorithm
+\item \textbf{Software Trainee (2018-19)}: Implemented user configurable timeouts, YAML checker, and system flow checkers
+\end{joblong}
+
+\newpage
+
+\begin{joblong}{{\color{adobeblue}Unsupervised Prompt Learning} $|$ Master's Thesis}{Jan 2023 - June 2023}
+\item Explored \textbf{CLIP-based zero-shot classification} for satellite image datasets in unsupervised settings
+\item Improved pseudo-labelling and prompt optimization using \textbf{CoOp, CoCoOp,} and \textbf{AppleNet}
+\item Enhanced performance and domain generalization through \textbf{ iterative pseudo-labeling} and \textbf{ feature enhancement}
+\end{joblong}
+
+\begin{joblong}{{\color{adobeblue}Semi Blind Image Super Resolution} $|$ Master's Thesis}{Aug 2022 - Dec 2022}
+\item Investigated \textbf{dictionary learning approaches} for reconstructing high-resolution images from low-resolution inputs
+\item Integrated \textbf{blurring kernel estimation} and \textbf{CNN-based enhancements} to improve reconstruction quality
+\item Demonstrated performance comparable to deep learning methods while requiring fewer training images
+\end{joblong}
+
+\begin{joblong}{{\color{adobeblue}Health Screen Segmentation - Cloud Physician} $|$ Team Lead $|$ Inter IIT}{Gold}
+\item Developed a pipeline for vital signs extraction using \textbf{Segformer} for screen segmentation and \textbf{YOLOv8} for detection
+\item Implemented OCR system using \textbf{Parseq} model with CLAHE, thresholding, erosion, and dilation preprocessing
+\item Engineered graph digitization algorithm using \textbf{contour detection}, \textbf{median filtering}, and \textbf{Otsu binarization}
+\item Enhanced YOLOv8 performance by 0.2\% mAP-50 using CRAFT-based text score probability maps
+\end{joblong}
+
+\begin{joblong}{{\color{adobeblue}Object Volume Estimation - Grow Simplee} $|$ Inter IIT}{Silver}
+\item Developed a pipeline using \textbf{OAK-D camera} to generate high-resolution depth maps for volume estimation
+\item Implemented \textbf{Monocular Depth Estimation (MDE)} using U-net architecture trained on RGB-Depth image pairs, converting depth maps to point clouds and calculating volume using \textbf{Qhull algorithm}
+\end{joblong}
+
+\begin{joblong}{{\color{adobeblue}Age and Gender Detection - Bosch} $|$ Team Lead $|$ Inter IIT}{}
+\item Built a pipeline to detect faces in CCTV images using \textbf{RetinaFace} and extracted face crops for analysis.
+\item Enhanced face crops with super-resolution models (\textbf{SPARNet, FSRNet, GFPGAN}) and applied \textbf{ArcFace, Deepface} for age and gender prediction.
+\item  \textbf{YOLO-based person tracking} implemented to ensure consistent identity assignment across video frames.
+\end{joblong}
+
+
+\begin{joblong}{{\color{adobeblue}Multi-modal Facial Reconstruction System} $|$ IIT Bombay}{}
+\item Developed a multi-modal machine learning system leveraging \textbf{Generative Adversarial Networks (GANs)} to reconstruct realistic facial images from input sketches and voice recordings
+\item Implemented advanced data preprocessing techniques using \textbf{VoxCeleb and VGGFace} datasets, including face alignment and log mel spectrogram generation
+\item Conducted experimental evaluations to analyze the impact of voice data and sketch quality on model performance, identifying design limitations and proposing improvements
+\end{joblong}
+
+\begin{joblong}{{\color{adobeblue}Neural Machine Translation (NMT) Project} $|$ IIT Bombay}{}
+\item Implemented and benchmarked \textbf{RNN, GRU, CNN, Transformer, and Reformer} models in PyTorch for English–German/French translation
+\item Conducted experiments on \textbf{Multi30k and WMT14} datasets, analyzing model robustness using \textbf{BLEU scores}
+\item Derived efficiency–accuracy tradeoffs, establishing \textbf{Transformers} as optimal for resource-constrained NMT
+\end{joblong}
+
+% \begin{joblong}{{\color{adobeblue}Phase-Based Fingerprint Matching} $|$ IIT Bombay}{}
+% \item Developed fingerprint recognition system using \textbf{phase-based image matching} to handle low-quality fingerprints where traditional minutiae-based methods struggle
+% \item Implemented preprocessing, core detection using \textbf{Poincaré index}, alignment through \textbf{Phase-Only Correlation (POC)} and \textbf{Band-Limited POC (BLPOC)}, and extracted common regions for accurate fingerprint matching
+% \end{joblong}
 
 %----------------------------------------------------------------------------------------
-%	EDUCATION
+%	ACHIEVEMENTS
 %----------------------------------------------------------------------------------------
-\section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
+\section{Achievements}
+\begin{itemize}[itemsep = -0.75 mm, leftmargin=*]
+\item Secured {\bf 3rd} position and rewarded with \textbf{\$400 cash prize} in {\bf Ener'gentic Hackathon 2025}. Developed multi-agent assistant platform for sustainable energy onboarding with intelligent user guidance systems
+\item \textbf{Winner, Pan-IIT Blockchain Hackathon}: Developed cross-chain NFT bridge platform for Solana, Avalanche, and Ethereum networks. Built Flask web application on Heroku with ERC721 token bridging and multi-wallet connectivity
+\item Secured {\bf 2nd} position and rewarded with \textbf{INR 50k} in {\bf Dremio Business Insight} competition on a \textbf{Big Data} problem
+\item Awarded change of branch to {\bf Electrical Engineering} for academic excellence
+\item {\bf JEE Advanced 2018}: All India Rank 1019 out of 1.64 Lakh candidates
+\item {\bf JEE Mains 2018}: 99.90 Percentile out of 1.1 Million candidates
+\item {\bf Intermediate/+2} (93.80\%) \& {\bf Matriculation} (96.00\%) from Delhi Public School, Navi Mumbai
+\item Recipient of {\bf KVPY Fellowship 2017-18} by Department of Science and Technology, Government of India
+\item {\bf National Top 1\%} in NSE Physics \& Chemistry (2018); Cleared NSE Astronomy (2017,18) \& RMO(2017)
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
-
-2022 & Class 12th Some Board \hfill  (Grades) \\
-
-2021 & Class 10th Some Board \hfill  (Grades) \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
-
-%----------------------------------------------------------------------------------------
-%	SKILLS
-%----------------------------------------------------------------------------------------
-\section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
-\end{tabularx}
-
-\vfill
-\center{\footnotesize Last updated: \today}
+\end{itemize}
 
 \end{document}
