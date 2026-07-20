@@ -29,8 +29,74 @@ NOTE: For the direct link to work, after editing your copy of `cv.tex` and pushi
 Also, if you have a premium subscription to Overleaf, you can use Overleaf's GitHub integration to push changes to your GitHub repo directly from Overleaf.
 
 ## Compiling the CV on your local computer
-- type `make` in the `autoCV` directory to produce file `cv.pdf`
-- you can optionally type `make clean` or `make distclean` to remove intermediate files
+
+### Prerequisites: Installing LaTeX on macOS
+
+You need a LaTeX distribution installed. Choose one of the following options:
+
+#### Option 1: MacTeX (Recommended - Full Distribution)
+- **Download**: Visit [MacTeX website](https://www.tug.org/mactex/) or install via Homebrew:
+  ```bash
+  brew install --cask mactex
+  ```
+- **Size**: ~4GB (includes all packages)
+- **Pros**: Everything included, no additional setup needed
+- **Cons**: Large download
+
+#### Option 2: BasicTeX (Minimal - Smaller Download)
+- **Install via Homebrew**:
+  ```bash
+  brew install --cask basictex
+  ```
+- **Size**: ~100MB (minimal installation)
+- **After installation**, you need to install required packages:
+  ```bash
+  sudo tlmgr update --self
+  sudo tlmgr install latexmk biblatex biber geometry enumitem titlesec multirow tabularx supertabular fontawesome5 url hyperref xcolor parskip
+  ```
+
+**Note**: After installing BasicTeX, you may need to add it to your PATH. Add this to your `~/.zshrc`:
+```bash
+export PATH="/usr/local/texlive/2024basic/bin/universal-darwin:$PATH"
+```
+Then run `source ~/.zshrc` or restart your terminal.
+
+### Building the CV
+
+Once LaTeX is installed:
+
+1. **Build the PDF**:
+   ```bash
+   make all
+   ```
+   or simply:
+   ```bash
+   make
+   ```
+   This will produce `cv.pdf` in the current directory.
+
+2. **Clean intermediate files**:
+   ```bash
+   make clean
+   ```
+
+3. **Clean everything including PDF**:
+   ```bash
+   make distclean
+   ```
+
+### Alternative: Manual Build (if make doesn't work)
+
+If `latexmk` is not available, you can build manually:
+
+```bash
+pdflatex cv.tex
+biber cv
+pdflatex cv.tex
+pdflatex cv.tex
+```
+
+(Note: Multiple `pdflatex` runs are needed for proper bibliography and cross-reference resolution)
 
 ## Detailed Instructions..
 
